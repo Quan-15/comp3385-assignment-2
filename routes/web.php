@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\FeedbackController;
+
+Route::get('/feedback', [FeedbackController::class, 'create']);
+Route::post('/feedback/send', [FeedbackController::class, 'send']);
+
 
 Route::get('/', function () {
     return view('welcome');
